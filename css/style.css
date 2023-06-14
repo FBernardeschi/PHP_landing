@@ -40,6 +40,10 @@ body {
     position: relative;
 }
 
+section {
+    margin: 25px 0;
+}
+
 .container {
     height: 100%;
     max-width: 1200px;
@@ -81,6 +85,15 @@ a.logo {
     text-decoration: none;
     margin-left: 25px;
     letter-spacing: .1rem;
+    transition: color .3s;
+}
+
+.navbar>a:hover {
+    color: #859AD7;
+}
+
+.navbar>a.active {
+    color: #859AD7;
 }
 
 /* main */
@@ -113,11 +126,16 @@ h1.title {
 
 .block-what {
     position: relative;
-    margin-top: 3rem;
+    padding: 2rem 0;
     width: 100%;
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(2, 1fr);
+}
+
+.img {
+    display: flex;
+    align-items: center;
 }
 
 .img>img {
@@ -165,7 +183,210 @@ h1.title {
     content: '';
     bottom: -9px;
     left: 0;
-    height: 2px;
+    height: 1px;
     width: 100%;
     background-color: #fff;
+}
+
+/* stat */
+
+section.stat {
+    padding: 3rem 0;
+    background-color:rgba(0, 0, 0, .9);
+}
+
+.stat h2, .stat>p {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.stat>p {
+    margin-top: 15px;
+}
+
+.block-stat {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.block-line {
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.block-line .pr {
+    float: right;
+}
+
+.stat-line {
+    margin: 5px 0;
+    padding: 0 .5rem;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.stat-line>span {
+    color: #000;
+    font-weight: 600;
+}
+
+.last-year h2, .first-year h2 {
+    margin-bottom: 15px;
+}
+
+.block-stat>div {
+    grid-column: span 1;
+}
+
+.first-year .php {
+    width: 37%;
+}
+
+.first-year .ph {
+    width: 29%;
+}
+
+.first-year .js {
+    width: 49%;
+}
+
+.first-year .rb {
+    width: 23%;
+}
+
+.first-year .jv {
+    width: 31%;
+}
+
+/* last */
+
+.last-year .php {
+    width: 33%;
+}
+
+.last-year .ph {
+    width: 41%;
+}
+
+.last-year .js {
+    width: 31%;
+}
+
+.last-year .rb {
+    width: 32%;
+}
+
+.last-year .jv {
+    width: 39%;
+}
+
+.block-epilog {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.epilog {
+    width: 60%;
+    min-width: 320px;
+    font-size: 1.3rem;
+}
+
+/* media */
+
+@media (max-width: 900px) {
+    .close {
+        display: block;
+        cursor: pointer;
+    }
+
+    .close .ic-close {
+        display: none;
+    }
+
+    .close.active .ic-close {
+        display: block;
+    }
+
+    .close.active .three {
+        display: none;
+    }
+
+    .navbar {
+        padding: 1rem .5rem;
+        background-color: rgba(0, 0, 0, .7);
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transition: left .5s;
+    }
+
+    .navbar>a {
+        margin: .3rem 0 .3rem 1rem;
+    }
+
+    .close.active ~ .navbar {
+        left: 0;
+    }
+
+    .block-what {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img {
+        display: none;
+    }
+
+    .block-stat {
+        grid-template-columns: 1fr;
+    }
+
+    .epilog {
+        margin-top: 25px;
+        width: 75%;
+    }
+}
+
+@media (max-width: 545px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    a.logo {
+        font-size: 2.2rem;
+    }
+
+    h1.title {
+        font-size: 1.6rem;
+    }
+
+    .suptitle {
+        font-size: 1.2em;
+    }
+
+    .stat h2, .stat>p {
+        padding: 0 1rem;
+    }
+
+    .block-line {
+        padding: 0.8rem .4rem;
+    }
+
+    .epilog {
+        font-size: 0.9rem;
+    }
 }
